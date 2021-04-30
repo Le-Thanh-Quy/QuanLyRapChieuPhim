@@ -30,8 +30,6 @@ namespace logindn
             lg1.Visible = false;
             linkLabel_login.Visible = true;
             dangKy1.Visible = true;
-            
-
         }
 
         private void linkLabel_login_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

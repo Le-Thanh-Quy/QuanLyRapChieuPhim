@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.VisualBasic;
+
 
 namespace logindn
 {
@@ -82,7 +84,50 @@ namespace logindn
         }
         private void button_Login_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Đăng nhập được rồi nè thằng lồn");
+            MessageBox.Show("Đăng nhập được rồi nè");
+        }
+
+        private void textBox_Phone_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox_Phone.Text.Length > 0 && textBox_Phone.Text.Length < 18)
+            {
+                char a = textBox_Phone.Text[textBox_Phone.Text.Length - 1];
+                if (textBox_Phone.Text.Length > 11)
+                {
+                    if (a == '@' || a == '!')
+                    {
+                        return;
+                    }
+                    textBox_Phone.Text = textBox_Phone.Text.Remove(textBox_Phone.Text.Length - 1, 1);
+                    MessageBox.Show("SDT chỉ bao gồm 11 chữ số");
+                    return;
+                }
+                if (a < '0' || a > '9')
+                {
+                    textBox_Phone.Text = textBox_Phone.Text.Remove(textBox_Phone.Text.Length - 1, 1);
+                    MessageBox.Show("SDT bao gồm các chữ số");
+                }
+                
+            }
+        }
+
+        private void textBox_Pass_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox_Pass.Text.Length > 0)
+            {
+                char a = textBox_Pass.Text[textBox_Pass.Text.Length - 1];
+                if (textBox_Pass.Text.Length > 9)
+                {
+                    textBox_Pass.Text = textBox_Pass.Text.Remove(textBox_Pass.Text.Length - 1, 1);
+                    MessageBox.Show("Mật khẩu chỉ bao gồm 9 ký tự");                   
+                }
+            }
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            
+            string input = Interaction.InputBox("Nhập vào số điện thoại cần khôi phục", "Quên mật khẩu", "", 500, 300);
         }
     }
 }

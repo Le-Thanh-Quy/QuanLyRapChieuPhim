@@ -107,6 +107,7 @@
             this.textBox_Phone.Name = "textBox_Phone";
             this.textBox_Phone.Size = new System.Drawing.Size(187, 21);
             this.textBox_Phone.TabIndex = 14;
+            this.textBox_Phone.TextChanged += new System.EventHandler(this.textBox_Phone_TextChanged);
             this.textBox_Phone.Enter += new System.EventHandler(this.textBox_Phone_Enter);
             this.textBox_Phone.Leave += new System.EventHandler(this.textBox_Phone_Leave);
             // 
@@ -118,6 +119,7 @@
             this.textBox_Name.Name = "textBox_Name";
             this.textBox_Name.Size = new System.Drawing.Size(187, 21);
             this.textBox_Name.TabIndex = 13;
+            this.textBox_Name.TextChanged += new System.EventHandler(this.textBox_Name_TextChanged);
             this.textBox_Name.Enter += new System.EventHandler(this.textBox_Name_Enter);
             this.textBox_Name.Leave += new System.EventHandler(this.textBox_Name_Leave);
             // 
@@ -126,9 +128,10 @@
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker1.Location = new System.Drawing.Point(57, 144);
             this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dateTimePicker1.Size = new System.Drawing.Size(187, 20);
             this.dateTimePicker1.TabIndex = 22;
-            this.dateTimePicker1.Value = new System.DateTime(2021, 4, 30, 1, 43, 44, 0);
+            this.dateTimePicker1.Value = new System.DateTime(2021, 4, 30, 0, 0, 0, 0);
             this.dateTimePicker1.Enter += new System.EventHandler(this.dateTimePicker1_Enter);
             // 
             // textBoxPass2
@@ -139,6 +142,7 @@
             this.textBoxPass2.Name = "textBoxPass2";
             this.textBoxPass2.Size = new System.Drawing.Size(187, 21);
             this.textBoxPass2.TabIndex = 24;
+            this.textBoxPass2.TextChanged += new System.EventHandler(this.textBoxPass2_TextChanged);
             this.textBoxPass2.Enter += new System.EventHandler(this.textBoxPass2_Enter);
             this.textBoxPass2.Leave += new System.EventHandler(this.textBoxPass2_Leave);
             // 
@@ -150,6 +154,7 @@
             this.textBoxPass1.Name = "textBoxPass1";
             this.textBoxPass1.Size = new System.Drawing.Size(187, 21);
             this.textBoxPass1.TabIndex = 23;
+            this.textBoxPass1.TextChanged += new System.EventHandler(this.textBoxPass1_TextChanged);
             this.textBoxPass1.Enter += new System.EventHandler(this.textBoxPass1_Enter);
             this.textBoxPass1.Leave += new System.EventHandler(this.textBoxPass1_Leave);
             // 

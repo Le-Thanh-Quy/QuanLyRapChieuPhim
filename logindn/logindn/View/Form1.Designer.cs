@@ -56,7 +56,7 @@ namespace logindn
             this.linkLabel_login.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.linkLabel_login.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel_login.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.linkLabel_login.Location = new System.Drawing.Point(499, 476);
+            this.linkLabel_login.Location = new System.Drawing.Point(495, 476);
             this.linkLabel_login.Name = "linkLabel_login";
             this.linkLabel_login.Size = new System.Drawing.Size(71, 13);
             this.linkLabel_login.TabIndex = 26;

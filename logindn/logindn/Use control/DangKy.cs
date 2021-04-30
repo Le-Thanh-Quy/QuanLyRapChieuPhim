@@ -110,5 +110,68 @@ namespace logindn
         {
             label3.Visible = false;
         }
+
+        private void textBox_Name_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox_Name.Text.Length > 0)
+            {
+                char a = textBox_Name.Text[textBox_Name.Text.Length - 1];
+                if (a >= '0' && a <= '9')
+                {
+                    textBox_Name.Text = textBox_Name.Text.Remove(textBox_Name.Text.Length - 1, 1);
+                    MessageBox.Show("Tên bao gồm các chữ cái");
+                }
+                if (textBox_Name.Text.Length > 25)
+                {
+                    textBox_Name.Text = textBox_Name.Text.Remove(textBox_Name.Text.Length - 1, 1);
+                    MessageBox.Show("Tên tối đa chỉ bao gồm 25 ký tự");
+                }
+            }
+        }
+
+        private void textBox_Phone_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox_Phone.Text.Length > 0 && textBox_Phone.Text.Length < 18)
+            {
+                char a = textBox_Phone.Text[textBox_Phone.Text.Length - 1];
+                if (textBox_Phone.Text.Length > 11)
+                { 
+                    textBox_Phone.Text = textBox_Phone.Text.Remove(textBox_Phone.Text.Length - 1, 1);
+                    MessageBox.Show("SDT chỉ bao gồm 11 chữ số");
+                    return;
+                }
+                if (a < '0' || a > '9')
+                {
+                    textBox_Phone.Text = textBox_Phone.Text.Remove(textBox_Phone.Text.Length - 1, 1);
+                    MessageBox.Show("SDT bao gồm các chữ số");
+                }
+            }
+        }
+
+        private void textBoxPass1_TextChanged(object sender, EventArgs e)
+        {
+            if (textBoxPass1.Text.Length > 0 && textBoxPass1.Text.Length < 11)
+            {
+                char a = textBoxPass1.Text[textBoxPass1.Text.Length - 1];
+                if (textBoxPass1.Text.Length > 9)
+                {
+                    textBoxPass1.Text = textBoxPass1.Text.Remove(textBoxPass1.Text.Length - 1, 1);
+                    MessageBox.Show("Mật khẩu chỉ bao gồm 9 ký tự");
+                }
+            }
+        }
+
+        private void textBoxPass2_TextChanged(object sender, EventArgs e)
+        {
+            if (textBoxPass2.Text.Length > 0 && textBoxPass2.Text.Length < 11)
+            {
+                char a = textBoxPass2.Text[textBoxPass2.Text.Length - 1];
+                if (textBoxPass2.Text.Length > 9)
+                {
+                    textBoxPass2.Text = textBoxPass2.Text.Remove(textBoxPass2.Text.Length - 1, 1);
+                    MessageBox.Show("Mật khẩu chỉ bao gồm 9 ký tự");
+                }
+            }
+        }
     }
 }

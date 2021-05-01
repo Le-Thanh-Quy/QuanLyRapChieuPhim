@@ -185,6 +185,7 @@
             this.button_Login.Text = "Đăng Ký";
             this.button_Login.TextColor = System.Drawing.Color.Navy;
             this.button_Login.UseVisualStyleBackColor = false;
+            this.button_Login.Click += new System.EventHandler(this.button_Login_Click);
             // 
             // DangKy
             // 

@@ -38,5 +38,32 @@ namespace logindn
             dangKy1.Visible = false;
             linkLabel_login.Visible = false;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            this.SetDesktopLocation(100, 50);
+        }
+
+        private void dangKy1_VisibleChanged(object sender, EventArgs e)
+        {
+            if (dangKy1.Visible == false)
+            {
+                lg1.Visible = true;
+                linkLabel_login.Visible = false;
+                lg1.Phone = dangKy1.Phone;
+                if (dangKy1.Password != "Nhập mật khẩu")
+                {
+                    
+                    lg1.Password = dangKy1.Password;
+                }
+                
+            }
+            
+        }
     }
 }

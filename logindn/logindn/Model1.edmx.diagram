@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8090f5b3d3e64ad78ab52c5bcb08eba6" Name="Diagram1">
+        <EntityTypeShape EntityType="QuanLyRapChieuPhimModel.CaChieu" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyRapChieuPhimModel.GheNgoi" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyRapChieuPhimModel.KhachHang" Width="1.5" PointX="3" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyRapChieuPhimModel.LichChieu" Width="1.5" PointX="3" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyRapChieuPhimModel.Phim" Width="1.5" PointX="0.75" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyRapChieuPhimModel.PhongChieu" Width="1.5" PointX="0.75" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyRapChieuPhimModel.sysdiagram" Width="1.5" PointX="5.75" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyRapChieuPhimModel.TaiKhoan" Width="1.5" PointX="0.75" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyRapChieuPhimModel.TheLoai" Width="1.5" PointX="3" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyRapChieuPhimModel.Ve" Width="1.5" PointX="5.25" PointY="4.25" IsExpanded="true" />
+        <AssociationConnector Association="QuanLyRapChieuPhimModel.FK__LichChieu__idCaC__02C769E9" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyRapChieuPhimModel.FK__Ve__idGheNgoi__0B5CAFEA" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyRapChieuPhimModel.FK__KhachHang__DiemT__719CDDE7" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyRapChieuPhimModel.FK__Ve__idKhachHang__0A688BB1" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyRapChieuPhimModel.FK__LichChieu__idPhi__03BB8E22" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyRapChieuPhimModel.FK__LichChieu__idPho__01D345B0" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyRapChieuPhimModel.FK__Ve__idLichChieu__09746778" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyRapChieuPhimModel.PhanLoaiPhim" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -16,7 +16,28 @@ namespace logindn
         {
             InitializeComponent();
         }
-
+        public string Phone
+        {
+            get
+            {
+                return textBox_Phone.Text;
+            }
+            set
+            {
+                textBox_Phone.Text = value;
+            }
+        }
+        public string Password
+        {
+            get
+            {
+                return textBoxPass1.Text;
+            }
+            set
+            {
+                textBoxPass1.Text = value;
+            }
+        }
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Tính Năng Sẽ Phát Triển Sau");
@@ -172,6 +193,60 @@ namespace logindn
                     MessageBox.Show("Mật khẩu chỉ bao gồm 9 ký tự");
                 }
             }
+        }
+        public int GetId()
+        {
+            QuanLyRapChieuPhimDB db = new QuanLyRapChieuPhimDB();
+            int count = db.KhachHangs.Select(p => p).Count();
+            if(count == 0)
+            {
+                return 100;
+            }
+            var l = db.KhachHangs.OrderByDescending(p => p.id).First();
+            MessageBox.Show(l.id);
+            return 1;
+        }
+        private void button_Login_Click(object sender, EventArgs e)
+        {
+            if(textBoxPass2.Text == "Nhập lại mật khẩu" || textBox_Name.Text == "Nhập tên của bạn" 
+                || textBox_Phone.Text == "Nhập số điện thoại của bạn" || textBoxPass1.Text == "Nhập mật khẩu"
+                || label3.Visible == true)
+            {
+                MessageBox.Show("Không được để trống các mục");
+                return;
+            }
+            if( textBoxPass2.Text != textBoxPass1.Text)
+            {
+                MessageBox.Show("Mật khẩu không trùng khớp");
+                return;
+            }
+            QuanLyRapChieuPhimDB db = new QuanLyRapChieuPhimDB();
+            int count = db.TaiKhoans.Where(p => p.Phone == textBox_Phone.Text).Count();
+            if(count != 0)
+            {
+                MessageBox.Show("Số điện thoại " + textBox_Phone.Text +" đã đăng ký sử dụng dịch vụ" );
+                return;
+            }
+
+            KhachHang s = new KhachHang()
+            {
+                id = (GetId() + 1).ToString() ,
+                HoTen = textBox_Name.Text,
+                NgaySinh = dateTimePicker1.Value,
+                SDT = textBox_Phone.Text,
+                DiemTichLuy = 0
+            };
+            TaiKhoan tk = new TaiKhoan()
+            {
+                Phone = textBox_Phone.Text,
+                Pass = textBoxPass2.Text,
+                LoaiTK = 0
+            };
+            db.KhachHangs.Add(s);
+            db.TaiKhoans.Add(tk);
+            db.SaveChanges();
+            MessageBox.Show("Đăng ký tài khoản thành công");
+            this.Visible = false;
         }
     }
 }

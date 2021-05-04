@@ -52,7 +52,7 @@ namespace logindn
             this.textBox_Phone.Location = new System.Drawing.Point(57, 47);
             this.textBox_Phone.Name = "textBox_Phone";
             this.textBox_Phone.Size = new System.Drawing.Size(187, 21);
-            this.textBox_Phone.TabIndex = 1;
+            this.textBox_Phone.TabIndex = 100;
             this.textBox_Phone.TextChanged += new System.EventHandler(this.textBox_Phone_TextChanged);
             this.textBox_Phone.Enter += new System.EventHandler(this.textBox_Phone_Enter);
             this.textBox_Phone.Leave += new System.EventHandler(this.textBox_Phone_Leave);

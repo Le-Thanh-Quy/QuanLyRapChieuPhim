@@ -91,3 +91,5 @@ C:\Users\ADMIN\Desktop\logindn\logindn\logindn\bin\Debug\Bunifu.UI.WinForms.Buni
 C:\Users\ADMIN\Desktop\logindn\logindn\logindn\bin\Debug\Bunifu.UI.WinForms.BunifuTransition.xml
 C:\Users\ADMIN\Desktop\logindn\logindn\logindn\bin\Debug\Bunifu.UI.WinForms.BunifuUserControl.xml
 C:\Users\ADMIN\Desktop\logindn\logindn\logindn\obj\Debug\logindn.exe.licenses
+C:\Users\ADMIN\Desktop\logindn\logindn\logindn\obj\Debug\logindn.View.Form2.resources
+C:\Users\ADMIN\Desktop\logindn\logindn\logindn\obj\Debug\logindn.Use_control.Individual.resources

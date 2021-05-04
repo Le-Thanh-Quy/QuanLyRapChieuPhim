@@ -33,13 +33,13 @@ namespace logindn
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.linkLabel_signup = new System.Windows.Forms.LinkLabel();
             this.linkLabel_login = new System.Windows.Forms.LinkLabel();
-            this.dangKy1 = new logindn.DangKy();
-            this.lg1 = new logindn.LG();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.dangKy1 = new logindn.DangKy();
+            this.lg1 = new logindn.LG();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
@@ -47,7 +47,7 @@ namespace logindn
             // linkLabel_signup
             // 
             this.linkLabel_signup.AutoSize = true;
-            this.linkLabel_signup.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.linkLabel_signup.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.linkLabel_signup.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel_signup.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.linkLabel_signup.Location = new System.Drawing.Point(567, 417);
@@ -72,26 +72,6 @@ namespace logindn
             this.linkLabel_login.Text = "Đăng Nhập";
             this.linkLabel_login.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_login_LinkClicked);
             // 
-            // dangKy1
-            // 
-            this.dangKy1.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.dangKy1.Location = new System.Drawing.Point(383, 84);
-            this.dangKy1.Name = "dangKy1";
-            this.dangKy1.Size = new System.Drawing.Size(293, 414);
-            this.dangKy1.TabIndex = 9;
-            this.dangKy1.VisibleChanged += new System.EventHandler(this.dangKy1_VisibleChanged);
-            // 
-            // lg1
-            // 
-            this.lg1.BackColor = System.Drawing.Color.Silver;
-            this.lg1.Location = new System.Drawing.Point(383, 151);
-            this.lg1.Margin = new System.Windows.Forms.Padding(2);
-            this.lg1.Name = "lg1";
-            this.lg1.Password = "";
-            this.lg1.Phone = "";
-            this.lg1.Size = new System.Drawing.Size(293, 293);
-            this.lg1.TabIndex = 1;
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -103,6 +83,16 @@ namespace logindn
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1061, 59);
             this.panel1.TabIndex = 27;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(-95, -2);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(333, 63);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 28;
+            this.pictureBox3.TabStop = false;
             // 
             // button1
             // 
@@ -134,15 +124,28 @@ namespace logindn
             this.bunifuElipse1.ElipseRadius = 50;
             this.bunifuElipse1.TargetControl = this;
             // 
-            // pictureBox3
+            // dangKy1
             // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(-95, 1);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(333, 63);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 28;
-            this.pictureBox3.TabStop = false;
+            this.dangKy1.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.dangKy1.Location = new System.Drawing.Point(383, 94);
+            this.dangKy1.Name = "dangKy1";
+            this.dangKy1.Password = "Nhập mật khẩu";
+            this.dangKy1.Phone = "Nhập số điện thoại của bạn";
+            this.dangKy1.Size = new System.Drawing.Size(293, 414);
+            this.dangKy1.TabIndex = 9;
+            this.dangKy1.VisibleChanged += new System.EventHandler(this.dangKy1_VisibleChanged);
+            // 
+            // lg1
+            // 
+            this.lg1.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.lg1.Location = new System.Drawing.Point(383, 151);
+            this.lg1.Margin = new System.Windows.Forms.Padding(2);
+            this.lg1.Name = "lg1";
+            this.lg1.Password = "";
+            this.lg1.Phone = "";
+            this.lg1.Size = new System.Drawing.Size(293, 293);
+            this.lg1.TabIndex = 1;
+            this.lg1.BackColorChanged += new System.EventHandler(this.lg1_BackColorChanged);
             // 
             // Form1
             // 

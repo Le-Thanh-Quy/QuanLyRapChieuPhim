@@ -18,21 +18,21 @@ namespace logindn
         public Phim()
         {
             this.LichChieux = new HashSet<LichChieu>();
-            this.TheLoais = new HashSet<TheLoai>();
         }
     
         public string id { get; set; }
+        public string idTheLoai { get; set; }
         public string TenPhim { get; set; }
         public string MoTa { get; set; }
         public double ThoiLuong { get; set; }
         public string SanXuat { get; set; }
         public string DaoDien { get; set; }
         public int NamSX { get; set; }
+        public Nullable<bool> TrangThai { get; set; }
         public byte[] ApPhich { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<LichChieu> LichChieux { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TheLoai> TheLoais { get; set; }
+        public virtual TheLoai TheLoai { get; set; }
     }
 }

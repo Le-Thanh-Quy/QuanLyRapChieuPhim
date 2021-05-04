@@ -200,10 +200,9 @@ namespace logindn
             int count = db.KhachHangs.Select(p => p).Count();
             if(count == 0)
             {
-                return 100;
+                return 99;
             }
-            var l = db.KhachHangs.OrderByDescending(p => p.id).First();
-            MessageBox.Show(l.id);
+            var l = db.KhachHangs.OrderByDescending(p => p.id).First();          
             return 1;
         }
         private void button_Login_Click(object sender, EventArgs e)

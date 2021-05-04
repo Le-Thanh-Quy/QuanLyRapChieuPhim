@@ -46,7 +46,7 @@ namespace logindn
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            this.SetDesktopLocation(100, 50);
+            this.SetDesktopLocation(130, 40);
         }
 
         private void dangKy1_VisibleChanged(object sender, EventArgs e)
@@ -64,6 +64,19 @@ namespace logindn
                 
             }
             
+        }
+
+        private void lg1_BackColorChanged(object sender, EventArgs e)
+        {
+            if(lg1.BackColor == SystemColors.AppWorkspace)
+            {
+                this.Show();
+            }
+            else
+            {
+                this.Hide();
+                lg1.Password = "Mật khẩu";
+            }
         }
     }
 }

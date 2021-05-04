@@ -8,7 +8,7 @@
     <Property Name="Tenca" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="ThoigianBatDau" Type="Time" Precision="7" />
     <Property Name="ThoiGianKetThuc" Type="Time" Precision="7" />
-    <NavigationProperty Name="LichChieux" Relationship="Self.FK__LichChieu__idCaC__02C769E9" FromRole="CaChieu" ToRole="LichChieu" />
+    <NavigationProperty Name="LichChieux" Relationship="Self.FK__LichChieu__idCaC__32E0915F" FromRole="CaChieu" ToRole="LichChieu" />
   </EntityType>
   <EntityType Name="GheNgoi">
     <Key>
@@ -21,7 +21,7 @@
     <Property Name="p4" Type="Boolean" />
     <Property Name="p5" Type="Boolean" />
     <Property Name="p6" Type="Boolean" />
-    <NavigationProperty Name="Ves" Relationship="Self.FK__Ve__idGheNgoi__0B5CAFEA" FromRole="GheNgoi" ToRole="Ve" />
+    <NavigationProperty Name="Ves" Relationship="Self.FK__Ve__idGheNgoi__3B75D760" FromRole="GheNgoi" ToRole="Ve" />
   </EntityType>
   <EntityType Name="KhachHang">
     <Key>
@@ -32,8 +32,8 @@
     <Property Name="NgaySinh" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="SDT" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
     <Property Name="DiemTichLuy" Type="Int32" />
-    <NavigationProperty Name="TaiKhoan" Relationship="Self.FK__KhachHang__DiemT__719CDDE7" FromRole="KhachHang" ToRole="TaiKhoan" />
-    <NavigationProperty Name="Ves" Relationship="Self.FK__Ve__idKhachHang__0A688BB1" FromRole="KhachHang" ToRole="Ve" />
+    <NavigationProperty Name="TaiKhoan" Relationship="Self.FK__KhachHang__DiemT__21B6055D" FromRole="KhachHang" ToRole="TaiKhoan" />
+    <NavigationProperty Name="Ves" Relationship="Self.FK__Ve__idKhachHang__3A81B327" FromRole="KhachHang" ToRole="Ve" />
   </EntityType>
   <EntityType Name="LichChieu">
     <Key>
@@ -45,25 +45,27 @@
     <Property Name="NgayChieu" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="idPhong" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="TrangThai" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="CaChieu" Relationship="Self.FK__LichChieu__idCaC__02C769E9" FromRole="LichChieu" ToRole="CaChieu" />
-    <NavigationProperty Name="Phim" Relationship="Self.FK__LichChieu__idPhi__03BB8E22" FromRole="LichChieu" ToRole="Phim" />
-    <NavigationProperty Name="PhongChieu" Relationship="Self.FK__LichChieu__idPho__01D345B0" FromRole="LichChieu" ToRole="PhongChieu" />
-    <NavigationProperty Name="Ves" Relationship="Self.FK__Ve__idLichChieu__09746778" FromRole="LichChieu" ToRole="Ve" />
+    <NavigationProperty Name="CaChieu" Relationship="Self.FK__LichChieu__idCaC__32E0915F" FromRole="LichChieu" ToRole="CaChieu" />
+    <NavigationProperty Name="Phim" Relationship="Self.FK__LichChieu__idPhi__33D4B598" FromRole="LichChieu" ToRole="Phim" />
+    <NavigationProperty Name="PhongChieu" Relationship="Self.FK__LichChieu__idPho__31EC6D26" FromRole="LichChieu" ToRole="PhongChieu" />
+    <NavigationProperty Name="Ves" Relationship="Self.FK__Ve__idLichChieu__398D8EEE" FromRole="LichChieu" ToRole="Ve" />
   </EntityType>
   <EntityType Name="Phim">
     <Key>
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="idTheLoai" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="TenPhim" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="MoTa" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
     <Property Name="ThoiLuong" Type="Double" Nullable="false" />
     <Property Name="SanXuat" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="DaoDien" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="NamSX" Type="Int32" Nullable="false" />
+    <Property Name="TrangThai" Type="Boolean" />
     <Property Name="ApPhich" Type="Binary" MaxLength="Max" FixedLength="false" />
-    <NavigationProperty Name="LichChieux" Relationship="Self.FK__LichChieu__idPhi__03BB8E22" FromRole="Phim" ToRole="LichChieu" />
-    <NavigationProperty Name="TheLoais" Relationship="Self.PhanLoaiPhim" FromRole="Phim" ToRole="TheLoai" />
+    <NavigationProperty Name="LichChieux" Relationship="Self.FK__LichChieu__idPhi__33D4B598" FromRole="Phim" ToRole="LichChieu" />
+    <NavigationProperty Name="TheLoai" Relationship="Self.FK__Phim__idTheLoai__2C3393D0" FromRole="Phim" ToRole="TheLoai" />
   </EntityType>
   <EntityType Name="PhongChieu">
     <Key>
@@ -73,17 +75,7 @@
     <Property Name="TenPhong" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="SoChoNgoi" Type="Int32" Nullable="false" />
     <Property Name="TinhTrang" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="LichChieux" Relationship="Self.FK__LichChieu__idPho__01D345B0" FromRole="PhongChieu" ToRole="LichChieu" />
-  </EntityType>
-  <EntityType Name="sysdiagram">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="principal_id" Type="Int32" Nullable="false" />
-    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="version" Type="Int32" />
-    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <NavigationProperty Name="LichChieux" Relationship="Self.FK__LichChieu__idPho__31EC6D26" FromRole="PhongChieu" ToRole="LichChieu" />
   </EntityType>
   <EntityType Name="TaiKhoan">
     <Key>
@@ -92,7 +84,7 @@
     <Property Name="Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Pass" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="LoaiTK" Type="Int32" />
-    <NavigationProperty Name="KhachHangs" Relationship="Self.FK__KhachHang__DiemT__719CDDE7" FromRole="TaiKhoan" ToRole="KhachHang" />
+    <NavigationProperty Name="KhachHangs" Relationship="Self.FK__KhachHang__DiemT__21B6055D" FromRole="TaiKhoan" ToRole="KhachHang" />
   </EntityType>
   <EntityType Name="TheLoai">
     <Key>
@@ -101,7 +93,7 @@
     <Property Name="id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="TenTheLoai" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="MoTa" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="Phims" Relationship="Self.PhanLoaiPhim" FromRole="TheLoai" ToRole="Phim" />
+    <NavigationProperty Name="Phims" Relationship="Self.FK__Phim__idTheLoai__2C3393D0" FromRole="TheLoai" ToRole="Phim" />
   </EntityType>
   <EntityType Name="Ve">
     <Key>
@@ -113,11 +105,11 @@
     <Property Name="idGheNgoi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="idKhachHang" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="TienBanVe" Type="Decimal" Precision="19" Scale="4" />
-    <NavigationProperty Name="GheNgoi" Relationship="Self.FK__Ve__idGheNgoi__0B5CAFEA" FromRole="Ve" ToRole="GheNgoi" />
-    <NavigationProperty Name="KhachHang" Relationship="Self.FK__Ve__idKhachHang__0A688BB1" FromRole="Ve" ToRole="KhachHang" />
-    <NavigationProperty Name="LichChieu" Relationship="Self.FK__Ve__idLichChieu__09746778" FromRole="Ve" ToRole="LichChieu" />
+    <NavigationProperty Name="GheNgoi" Relationship="Self.FK__Ve__idGheNgoi__3B75D760" FromRole="Ve" ToRole="GheNgoi" />
+    <NavigationProperty Name="KhachHang" Relationship="Self.FK__Ve__idKhachHang__3A81B327" FromRole="Ve" ToRole="KhachHang" />
+    <NavigationProperty Name="LichChieu" Relationship="Self.FK__Ve__idLichChieu__398D8EEE" FromRole="Ve" ToRole="LichChieu" />
   </EntityType>
-  <Association Name="FK__LichChieu__idCaC__02C769E9">
+  <Association Name="FK__LichChieu__idCaC__32E0915F">
     <End Role="CaChieu" Type="Self.CaChieu" Multiplicity="0..1" />
     <End Role="LichChieu" Type="Self.LichChieu" Multiplicity="*" />
     <ReferentialConstraint>
@@ -129,7 +121,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Ve__idGheNgoi__0B5CAFEA">
+  <Association Name="FK__Ve__idGheNgoi__3B75D760">
     <End Role="GheNgoi" Type="Self.GheNgoi" Multiplicity="0..1" />
     <End Role="Ve" Type="Self.Ve" Multiplicity="*" />
     <ReferentialConstraint>
@@ -141,7 +133,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__KhachHang__DiemT__719CDDE7">
+  <Association Name="FK__KhachHang__DiemT__21B6055D">
     <End Role="TaiKhoan" Type="Self.TaiKhoan" Multiplicity="0..1" />
     <End Role="KhachHang" Type="Self.KhachHang" Multiplicity="*" />
     <ReferentialConstraint>
@@ -153,7 +145,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Ve__idKhachHang__0A688BB1">
+  <Association Name="FK__Ve__idKhachHang__3A81B327">
     <End Role="KhachHang" Type="Self.KhachHang" Multiplicity="0..1" />
     <End Role="Ve" Type="Self.Ve" Multiplicity="*" />
     <ReferentialConstraint>
@@ -165,7 +157,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__LichChieu__idPhi__03BB8E22">
+  <Association Name="FK__LichChieu__idPhi__33D4B598">
     <End Role="Phim" Type="Self.Phim" Multiplicity="0..1" />
     <End Role="LichChieu" Type="Self.LichChieu" Multiplicity="*" />
     <ReferentialConstraint>
@@ -177,7 +169,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__LichChieu__idPho__01D345B0">
+  <Association Name="FK__LichChieu__idPho__31EC6D26">
     <End Role="PhongChieu" Type="Self.PhongChieu" Multiplicity="1" />
     <End Role="LichChieu" Type="Self.LichChieu" Multiplicity="*" />
     <ReferentialConstraint>
@@ -189,7 +181,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Ve__idLichChieu__09746778">
+  <Association Name="FK__Ve__idLichChieu__398D8EEE">
     <End Role="LichChieu" Type="Self.LichChieu" Multiplicity="0..1" />
     <End Role="Ve" Type="Self.Ve" Multiplicity="*" />
     <ReferentialConstraint>
@@ -201,9 +193,17 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="PhanLoaiPhim">
+  <Association Name="FK__Phim__idTheLoai__2C3393D0">
+    <End Role="TheLoai" Type="Self.TheLoai" Multiplicity="1" />
     <End Role="Phim" Type="Self.Phim" Multiplicity="*" />
-    <End Role="TheLoai" Type="Self.TheLoai" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TheLoai">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Phim">
+        <PropertyRef Name="idTheLoai" />
+      </Dependent>
+    </ReferentialConstraint>
   </Association>
   <EntityContainer Name="QuanLyRapChieuPhimDB" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="CaChieux" EntityType="Self.CaChieu" />
@@ -212,41 +212,40 @@
     <EntitySet Name="LichChieux" EntityType="Self.LichChieu" />
     <EntitySet Name="Phims" EntityType="Self.Phim" />
     <EntitySet Name="PhongChieux" EntityType="Self.PhongChieu" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
     <EntitySet Name="TaiKhoans" EntityType="Self.TaiKhoan" />
     <EntitySet Name="TheLoais" EntityType="Self.TheLoai" />
     <EntitySet Name="Ves" EntityType="Self.Ve" />
-    <AssociationSet Name="FK__LichChieu__idCaC__02C769E9" Association="Self.FK__LichChieu__idCaC__02C769E9">
+    <AssociationSet Name="FK__LichChieu__idCaC__32E0915F" Association="Self.FK__LichChieu__idCaC__32E0915F">
       <End Role="CaChieu" EntitySet="CaChieux" />
       <End Role="LichChieu" EntitySet="LichChieux" />
     </AssociationSet>
-    <AssociationSet Name="FK__Ve__idGheNgoi__0B5CAFEA" Association="Self.FK__Ve__idGheNgoi__0B5CAFEA">
+    <AssociationSet Name="FK__Ve__idGheNgoi__3B75D760" Association="Self.FK__Ve__idGheNgoi__3B75D760">
       <End Role="GheNgoi" EntitySet="GheNgois" />
       <End Role="Ve" EntitySet="Ves" />
     </AssociationSet>
-    <AssociationSet Name="FK__KhachHang__DiemT__719CDDE7" Association="Self.FK__KhachHang__DiemT__719CDDE7">
+    <AssociationSet Name="FK__KhachHang__DiemT__21B6055D" Association="Self.FK__KhachHang__DiemT__21B6055D">
       <End Role="TaiKhoan" EntitySet="TaiKhoans" />
       <End Role="KhachHang" EntitySet="KhachHangs" />
     </AssociationSet>
-    <AssociationSet Name="FK__Ve__idKhachHang__0A688BB1" Association="Self.FK__Ve__idKhachHang__0A688BB1">
+    <AssociationSet Name="FK__Ve__idKhachHang__3A81B327" Association="Self.FK__Ve__idKhachHang__3A81B327">
       <End Role="KhachHang" EntitySet="KhachHangs" />
       <End Role="Ve" EntitySet="Ves" />
     </AssociationSet>
-    <AssociationSet Name="FK__LichChieu__idPhi__03BB8E22" Association="Self.FK__LichChieu__idPhi__03BB8E22">
+    <AssociationSet Name="FK__LichChieu__idPhi__33D4B598" Association="Self.FK__LichChieu__idPhi__33D4B598">
       <End Role="Phim" EntitySet="Phims" />
       <End Role="LichChieu" EntitySet="LichChieux" />
     </AssociationSet>
-    <AssociationSet Name="FK__LichChieu__idPho__01D345B0" Association="Self.FK__LichChieu__idPho__01D345B0">
+    <AssociationSet Name="FK__LichChieu__idPho__31EC6D26" Association="Self.FK__LichChieu__idPho__31EC6D26">
       <End Role="PhongChieu" EntitySet="PhongChieux" />
       <End Role="LichChieu" EntitySet="LichChieux" />
     </AssociationSet>
-    <AssociationSet Name="FK__Ve__idLichChieu__09746778" Association="Self.FK__Ve__idLichChieu__09746778">
+    <AssociationSet Name="FK__Ve__idLichChieu__398D8EEE" Association="Self.FK__Ve__idLichChieu__398D8EEE">
       <End Role="LichChieu" EntitySet="LichChieux" />
       <End Role="Ve" EntitySet="Ves" />
     </AssociationSet>
-    <AssociationSet Name="PhanLoaiPhim" Association="Self.PhanLoaiPhim">
-      <End Role="Phim" EntitySet="Phims" />
+    <AssociationSet Name="FK__Phim__idTheLoai__2C3393D0" Association="Self.FK__Phim__idTheLoai__2C3393D0">
       <End Role="TheLoai" EntitySet="TheLoais" />
+      <End Role="Phim" EntitySet="Phims" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

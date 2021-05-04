@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using logindn.View;
 using Microsoft.VisualBasic;
 
 
@@ -38,6 +39,12 @@ namespace logindn
             set
             {
                 textBox_Pass.Text = value;
+                if(value == "Mật khẩu")
+                {
+                    textBox_Pass.PasswordChar = '\0';
+                    textBox_Pass.ForeColor = SystemColors.GrayText;
+                }
+                
             }
         }
         private void textBox_Phone_Enter(object sender, EventArgs e)
@@ -95,14 +102,19 @@ namespace logindn
             {
                 MessageBox.Show("Số điện thoại hoặc mật khẩu không chính xác");
                 textBox_Phone.Text = "Nhập số điện thoại của bạn";
+                textBox_Pass.PasswordChar = '\0';
                 textBox_Pass.Text = "Mật khẩu";
+                textBox_Pass.ForeColor = SystemColors.GrayText;
             }
             else
             {
                 List<TaiKhoan> taiKhoans = l.ToList<TaiKhoan>();
                 if (taiKhoans[0].LoaiTK == 0)
                 {
-                    MessageBox.Show("Mở form của khách hàng");
+                    Form2 f2 = new Form2(taiKhoans[0].Phone);
+                    this.BackColor = SystemColors.Window;
+                    f2.ShowDialog();
+                    this.BackColor = SystemColors.AppWorkspace;
                 }
                 if (taiKhoans[0].LoaiTK == 1)
                 {
@@ -140,7 +152,7 @@ namespace logindn
         }
 
         private void textBox_Pass_TextChanged(object sender, EventArgs e)
-        {
+        {      
             if(textBox_Pass.Text != "Mật khẩu")
             {
                 textBox_Pass.PasswordChar = '*';
@@ -182,7 +194,7 @@ namespace logindn
                         
                         if (check1 == j.HoTen && check2 == (j.NgaySinh.Day.ToString() +"-"+ j.NgaySinh.Month.ToString()+"-"+ j.NgaySinh.Year.ToString()))
                         {
-                            MessageBox.Show("Mật khẩu cảu bạn là: " + i.Pass);
+                            MessageBox.Show("Mật khẩu của bạn là: " + i.Pass);
                             textBox_Phone.Text = i.Phone;
                             textBox_Pass.Text = i.Pass;
                             return;
@@ -196,8 +208,6 @@ namespace logindn
             {
                 MessageBox.Show("Không tồn tại số điện thoại: " + input);
             }
-            
-
         }
     }
 }

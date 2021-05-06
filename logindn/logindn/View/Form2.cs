@@ -39,7 +39,7 @@ namespace logindn.View
         }
         private void button3_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            Environment.Exit(1);
         }
 
         private void Form2_Load(object sender, EventArgs e)
@@ -64,34 +64,40 @@ namespace logindn.View
         {
             if(TheLoai == "ALL")
             {
-                bunifuDataGridView1.DataSource = BLL_QLRCP.Instance.GetAllFilm();
+                DataGridViewFilm.DataSource = BLL_QLRCP.Instance.GetAllFilm();
             }
             else
             {
-                bunifuDataGridView1.DataSource = BLL_QLRCP.Instance.GetListFilm(TheLoai , Ten);
+                DataGridViewFilm.DataSource = BLL_QLRCP.Instance.GetListFilm(TheLoai , Ten);
             }
             
         }
 
         private void bunifuDataGridView1_DataSourceChanged(object sender, EventArgs e)
         {
-            bunifuDataGridView1.Columns["id"].Visible = false;
-            bunifuDataGridView1.Columns["MoTa"].Visible = false;
-            bunifuDataGridView1.Columns["ApPhich"].Visible = false;
-            bunifuDataGridView1.Columns["TheLoai"].Visible = false;
-            bunifuDataGridView1.Columns["TrangThai"].Visible = false;
-            bunifuDataGridView1.Columns["idTheLoai"].Visible = false;
-            bunifuDataGridView1.Columns["LichChieux"].Visible = false;
-            bunifuDataGridView1.Columns["DaoDien"].Visible = false;
-            bunifuDataGridView1.Columns["TenPhim"].Width = 250;
-            bunifuDataGridView1.Columns["NamSX"].Width = 70;
+            DataGridViewFilm.Columns["id"].Visible = false;
+            DataGridViewFilm.Columns["MoTa"].Visible = false;
+            DataGridViewFilm.Columns["ApPhich"].Visible = false;
+            DataGridViewFilm.Columns["TheLoai"].Visible = false;
+            DataGridViewFilm.Columns["TrangThai"].Visible = false;
+            DataGridViewFilm.Columns["idTheLoai"].Visible = false;
+            DataGridViewFilm.Columns["LichChieux"].Visible = false;
+            DataGridViewFilm.Columns["HangPhim"].Visible = false;
+            DataGridViewFilm.Columns["DienVien"].Visible = false;
+            DataGridViewFilm.Columns["ThoiLuong"].Width = 85;
+            DataGridViewFilm.Columns["TenPhim"].Width = 210;
+            DataGridViewFilm.Columns["NgayCongChieu"].Width = 130;
 
         }
 
         private void bunifuDataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
            
-            MessageBox.Show(bunifuDataGridView1.CurrentRow.Cells["TenPhim"].Value.ToString());
+            string idPhim = DataGridViewFilm.CurrentRow.Cells["id"].Value.ToString();
+            this.Hide();
+            FormTLFilm formTLFilm = new FormTLFilm(idPhim);
+            formTLFilm.ShowDialog();
+            this.Show();
         }
 
         private void cbbFilm_SelectedIndexChanged(object sender, EventArgs e)

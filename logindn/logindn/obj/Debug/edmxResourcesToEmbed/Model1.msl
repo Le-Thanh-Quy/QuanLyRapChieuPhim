@@ -55,9 +55,10 @@
           <ScalarProperty Name="TenPhim" ColumnName="TenPhim" />
           <ScalarProperty Name="MoTa" ColumnName="MoTa" />
           <ScalarProperty Name="ThoiLuong" ColumnName="ThoiLuong" />
-          <ScalarProperty Name="SanXuat" ColumnName="SanXuat" />
+          <ScalarProperty Name="HangPhim" ColumnName="HangPhim" />
           <ScalarProperty Name="DaoDien" ColumnName="DaoDien" />
-          <ScalarProperty Name="NamSX" ColumnName="NamSX" />
+          <ScalarProperty Name="DienVien" ColumnName="DienVien" />
+          <ScalarProperty Name="NgayCongChieu" ColumnName="NgayCongChieu" />
           <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
           <ScalarProperty Name="ApPhich" ColumnName="ApPhich" />
         </MappingFragment>

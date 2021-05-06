@@ -25,9 +25,10 @@ namespace logindn
         public string TenPhim { get; set; }
         public string MoTa { get; set; }
         public double ThoiLuong { get; set; }
-        public string SanXuat { get; set; }
+        public string HangPhim { get; set; }
         public string DaoDien { get; set; }
-        public int NamSX { get; set; }
+        public string DienVien { get; set; }
+        public System.DateTime NgayCongChieu { get; set; }
         public Nullable<bool> TrangThai { get; set; }
         public byte[] ApPhich { get; set; }
     

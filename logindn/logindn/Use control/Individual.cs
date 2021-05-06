@@ -105,7 +105,7 @@ namespace logindn.Use_control
             {
                 date = Convert.ToDateTime(input);
             }
-            catch(Exception erorr)
+            catch( Exception erorr)
             {
                 MessageBox.Show("Nhập sai kiểu định dạng");
                 return;

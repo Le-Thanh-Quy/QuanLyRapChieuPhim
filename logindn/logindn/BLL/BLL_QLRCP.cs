@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
+using System.Drawing;
 
 namespace logindn.BLL
 {
@@ -73,6 +75,32 @@ namespace logindn.BLL
                 var l = db.Phims.Where(p => p.TheLoai.TenTheLoai == theLoai &&  p.TrangThai == true).Select(p => p);
                 return l.ToList<Phim>();
             }
+        }
+        public Phim GetPhim(string id)
+        {
+            Phim phim = db.Phims.Single(p => p.id == id);
+            return phim;
+        }
+        public byte[] ConvertFilltoByte (string str)
+        {
+            byte[] data = null;
+            FileInfo fileInfo = new FileInfo(str);
+            long numBytes = fileInfo.Length;
+            FileStream fileStream = new FileStream(str , FileMode.Open , FileAccess.Read);
+            BinaryReader binaryReader = new BinaryReader(fileStream);
+            data = binaryReader.ReadBytes((int)numBytes);
+            return data;
+        }
+
+        public Image ConvertByteyoImage(byte[] photo)
+        {
+            Image image;
+            using (MemoryStream memoryStream = new MemoryStream(photo, 0, photo.Length))
+            {
+                memoryStream.Write(photo, 0, photo.Length);
+                image = Image.FromStream(memoryStream, true);
+            }
+            return image;
         }
     }
 }

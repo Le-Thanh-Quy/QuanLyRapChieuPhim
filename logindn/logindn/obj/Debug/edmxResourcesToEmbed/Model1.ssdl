@@ -14,12 +14,8 @@
       <PropertyRef Name="idGheNgoi" />
     </Key>
     <Property Name="idGheNgoi" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="p1" Type="bit" />
-    <Property Name="p2" Type="bit" />
-    <Property Name="p3" Type="bit" />
-    <Property Name="p4" Type="bit" />
-    <Property Name="p5" Type="bit" />
-    <Property Name="p6" Type="bit" />
+    <Property Name="idLichChieu" Type="varchar" MaxLength="50" />
+    <Property Name="TrangThai" Type="text" />
   </EntityType>
   <EntityType Name="KhachHang">
     <Key>
@@ -40,7 +36,13 @@
     <Property Name="idCaChieu" Type="varchar" MaxLength="50" />
     <Property Name="NgayChieu" Type="date" Nullable="false" />
     <Property Name="idPhong" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="TrangThai" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LoaiVe">
+    <Key>
+      <PropertyRef Name="LoaiVe" />
+    </Key>
+    <Property Name="LoaiVe" Type="int" Nullable="false" />
+    <Property Name="Gia" Type="int" />
   </EntityType>
   <EntityType Name="Phim">
     <Key>
@@ -55,8 +57,8 @@
     <Property Name="DaoDien" Type="nvarchar" MaxLength="100" />
     <Property Name="DienVien" Type="nvarchar" MaxLength="100" />
     <Property Name="NgayCongChieu" Type="date" Nullable="false" />
-    <Property Name="TrangThai" Type="bit" />
     <Property Name="ApPhich" Type="image" />
+    <Property Name="Trailer" Type="varchar" MaxLength="100" />
   </EntityType>
   <EntityType Name="PhongChieu">
     <Key>
@@ -66,6 +68,16 @@
     <Property Name="TenPhong" Type="nvarchar" MaxLength="100" Nullable="false" />
     <Property Name="SoChoNgoi" Type="int" Nullable="false" />
     <Property Name="TinhTrang" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
   <EntityType Name="TaiKhoan">
     <Key>
@@ -87,13 +99,25 @@
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id" Type="varchar" MaxLength="200" Nullable="false" />
     <Property Name="LoaiVe" Type="int" />
-    <Property Name="idLichChieu" Type="varchar" MaxLength="50" />
     <Property Name="idGheNgoi" Type="varchar" MaxLength="50" />
     <Property Name="idKhachHang" Type="varchar" MaxLength="50" />
     <Property Name="TienBanVe" Type="money" />
+    <Property Name="Ghe" Type="text" />
   </EntityType>
+  <Association Name="FK__GheNgoi__idLichC__412EB0B6">
+    <End Role="LichChieu" Type="Self.LichChieu" Multiplicity="0..1" />
+    <End Role="GheNgoi" Type="Self.GheNgoi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LichChieu">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="GheNgoi">
+        <PropertyRef Name="idLichChieu" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK__KhachHang__DiemT__276EDEB3">
     <End Role="TaiKhoan" Type="Self.TaiKhoan" Multiplicity="0..1" />
     <End Role="KhachHang" Type="Self.KhachHang" Multiplicity="*" />
@@ -154,7 +178,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Ve__idGheNgoi__2F10007B">
+  <Association Name="FK__Ve__idGheNgoi__778AC167">
     <End Role="GheNgoi" Type="Self.GheNgoi" Multiplicity="0..1" />
     <End Role="Ve" Type="Self.Ve" Multiplicity="*" />
     <ReferentialConstraint>
@@ -166,7 +190,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Ve__idKhachHang__2E1BDC42">
+  <Association Name="FK__Ve__idKhachHang__76969D2E">
     <End Role="KhachHang" Type="Self.KhachHang" Multiplicity="0..1" />
     <End Role="Ve" Type="Self.Ve" Multiplicity="*" />
     <ReferentialConstraint>
@@ -178,15 +202,15 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Ve__idLichChieu__2D27B809">
-    <End Role="LichChieu" Type="Self.LichChieu" Multiplicity="0..1" />
+  <Association Name="FK__Ve__LoaiVe__787EE5A0">
+    <End Role="LoaiVe" Type="Self.LoaiVe" Multiplicity="0..1" />
     <End Role="Ve" Type="Self.Ve" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="LichChieu">
-        <PropertyRef Name="id" />
+      <Principal Role="LoaiVe">
+        <PropertyRef Name="LoaiVe" />
       </Principal>
       <Dependent Role="Ve">
-        <PropertyRef Name="idLichChieu" />
+        <PropertyRef Name="LoaiVe" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -195,11 +219,17 @@
     <EntitySet Name="GheNgoi" EntityType="Self.GheNgoi" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="KhachHang" EntityType="Self.KhachHang" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="LichChieu" EntityType="Self.LichChieu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LoaiVe" EntityType="Self.LoaiVe" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Phim" EntityType="Self.Phim" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PhongChieu" EntityType="Self.PhongChieu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TaiKhoan" EntityType="Self.TaiKhoan" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TheLoai" EntityType="Self.TheLoai" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Ve" EntityType="Self.Ve" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__GheNgoi__idLichC__412EB0B6" Association="Self.FK__GheNgoi__idLichC__412EB0B6">
+      <End Role="LichChieu" EntitySet="LichChieu" />
+      <End Role="GheNgoi" EntitySet="GheNgoi" />
+    </AssociationSet>
     <AssociationSet Name="FK__KhachHang__DiemT__276EDEB3" Association="Self.FK__KhachHang__DiemT__276EDEB3">
       <End Role="TaiKhoan" EntitySet="TaiKhoan" />
       <End Role="KhachHang" EntitySet="KhachHang" />
@@ -220,16 +250,16 @@
       <End Role="TheLoai" EntitySet="TheLoai" />
       <End Role="Phim" EntitySet="Phim" />
     </AssociationSet>
-    <AssociationSet Name="FK__Ve__idGheNgoi__2F10007B" Association="Self.FK__Ve__idGheNgoi__2F10007B">
+    <AssociationSet Name="FK__Ve__idGheNgoi__778AC167" Association="Self.FK__Ve__idGheNgoi__778AC167">
       <End Role="GheNgoi" EntitySet="GheNgoi" />
       <End Role="Ve" EntitySet="Ve" />
     </AssociationSet>
-    <AssociationSet Name="FK__Ve__idKhachHang__2E1BDC42" Association="Self.FK__Ve__idKhachHang__2E1BDC42">
+    <AssociationSet Name="FK__Ve__idKhachHang__76969D2E" Association="Self.FK__Ve__idKhachHang__76969D2E">
       <End Role="KhachHang" EntitySet="KhachHang" />
       <End Role="Ve" EntitySet="Ve" />
     </AssociationSet>
-    <AssociationSet Name="FK__Ve__idLichChieu__2D27B809" Association="Self.FK__Ve__idLichChieu__2D27B809">
-      <End Role="LichChieu" EntitySet="LichChieu" />
+    <AssociationSet Name="FK__Ve__LoaiVe__787EE5A0" Association="Self.FK__Ve__LoaiVe__787EE5A0">
+      <End Role="LoaiVe" EntitySet="LoaiVe" />
       <End Role="Ve" EntitySet="Ve" />
     </AssociationSet>
   </EntityContainer>

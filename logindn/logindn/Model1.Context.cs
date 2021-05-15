@@ -29,8 +29,10 @@ namespace logindn
         public virtual DbSet<GheNgoi> GheNgois { get; set; }
         public virtual DbSet<KhachHang> KhachHangs { get; set; }
         public virtual DbSet<LichChieu> LichChieux { get; set; }
+        public virtual DbSet<LoaiVe> LoaiVes { get; set; }
         public virtual DbSet<Phim> Phims { get; set; }
         public virtual DbSet<PhongChieu> PhongChieux { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<TaiKhoan> TaiKhoans { get; set; }
         public virtual DbSet<TheLoai> TheLoais { get; set; }
         public virtual DbSet<Ve> Ves { get; set; }

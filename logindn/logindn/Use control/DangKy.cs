@@ -203,7 +203,7 @@ namespace logindn
                 return 99;
             }
             var l = db.KhachHangs.OrderByDescending(p => p.id).First();          
-            return 1;
+            return Convert.ToInt32(l.id);
         }
         private void button_Login_Click(object sender, EventArgs e)
         {

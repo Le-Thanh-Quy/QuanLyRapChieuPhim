@@ -21,13 +21,10 @@ namespace logindn
         }
     
         public string idGheNgoi { get; set; }
-        public Nullable<bool> p1 { get; set; }
-        public Nullable<bool> p2 { get; set; }
-        public Nullable<bool> p3 { get; set; }
-        public Nullable<bool> p4 { get; set; }
-        public Nullable<bool> p5 { get; set; }
-        public Nullable<bool> p6 { get; set; }
+        public string idLichChieu { get; set; }
+        public string TrangThai { get; set; }
     
+        public virtual LichChieu LichChieu { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Ve> Ves { get; set; }
     }

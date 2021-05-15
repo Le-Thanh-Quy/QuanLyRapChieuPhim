@@ -17,7 +17,7 @@ namespace logindn
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public LichChieu()
         {
-            this.Ves = new HashSet<Ve>();
+            this.GheNgois = new HashSet<GheNgoi>();
         }
     
         public string id { get; set; }
@@ -25,12 +25,11 @@ namespace logindn
         public string idCaChieu { get; set; }
         public System.DateTime NgayChieu { get; set; }
         public string idPhong { get; set; }
-        public int TrangThai { get; set; }
     
         public virtual CaChieu CaChieu { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<GheNgoi> GheNgois { get; set; }
         public virtual Phim Phim { get; set; }
         public virtual PhongChieu PhongChieu { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Ve> Ves { get; set; }
     }
 }

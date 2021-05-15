@@ -14,15 +14,15 @@ namespace logindn
     
     public partial class Ve
     {
-        public int id { get; set; }
+        public string id { get; set; }
         public Nullable<int> LoaiVe { get; set; }
-        public string idLichChieu { get; set; }
         public string idGheNgoi { get; set; }
         public string idKhachHang { get; set; }
         public Nullable<decimal> TienBanVe { get; set; }
+        public string Ghe { get; set; }
     
         public virtual GheNgoi GheNgoi { get; set; }
         public virtual KhachHang KhachHang { get; set; }
-        public virtual LichChieu LichChieu { get; set; }
+        public virtual LoaiVe LoaiVe1 { get; set; }
     }
 }

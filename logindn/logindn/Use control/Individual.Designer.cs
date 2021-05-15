@@ -78,7 +78,7 @@
             // 
             this.label5.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(1, 161);
+            this.label5.Location = new System.Drawing.Point(1, 189);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(175, 25);
             this.label5.TabIndex = 4;
@@ -108,7 +108,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Individual";
-            this.Size = new System.Drawing.Size(179, 198);
+            this.Size = new System.Drawing.Size(179, 221);
             this.ResumeLayout(false);
 
         }

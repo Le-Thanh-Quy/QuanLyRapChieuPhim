@@ -111,18 +111,24 @@ namespace logindn
                 List<TaiKhoan> taiKhoans = l.ToList<TaiKhoan>();
                 if (taiKhoans[0].LoaiTK == 0)
                 {
-                    Form2 f2 = new Form2(taiKhoans[0].Phone);
+                    FormUse f2 = new FormUse(taiKhoans[0].Phone);
                     this.BackColor = SystemColors.Window;
                     f2.ShowDialog();
                     this.BackColor = SystemColors.AppWorkspace;
                 }
                 if (taiKhoans[0].LoaiTK == 1)
                 {
-                    MessageBox.Show("Mở form của nhân viên bán vé");
+                    FormUse f2 = new FormUse(taiKhoans[0].Phone);
+                    this.BackColor = SystemColors.Window;
+                    f2.ShowDialog();
+                    this.BackColor = SystemColors.AppWorkspace;
                 }
                 if (taiKhoans[0].LoaiTK == 2)
                 {
-                    MessageBox.Show("Mở form của quản lý");
+                    FormManager formFilm = new FormManager();
+                    this.BackColor = SystemColors.Window;
+                    formFilm.ShowDialog();
+                    this.BackColor = SystemColors.AppWorkspace;
                 }
             } 
         }

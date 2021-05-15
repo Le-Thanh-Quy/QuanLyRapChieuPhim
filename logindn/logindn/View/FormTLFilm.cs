@@ -13,10 +13,14 @@ namespace logindn.View
 {
     public partial class FormTLFilm : Form
     {
+        public string idKhachhang = "";
         public string idPhim = "";
-        public FormTLFilm(string id)
+        public DateTime NgayChieu = DateTime.Now;
+        public FormTLFilm(string id , DateTime dateTime , string idKhachHang)
         {
+            idKhachhang = idKhachHang;
             idPhim = id;
+            NgayChieu = dateTime;
             InitializeComponent();
         }
 
@@ -55,6 +59,21 @@ namespace logindn.View
         private void pictureBox1_MouseLeave(object sender, EventArgs e)
         {
             pictureBox3.Visible = false;
+        }
+
+        private void bunifuThinButton23_Click(object sender, EventArgs e)
+        {
+            FormChonCho formChonCho = new FormChonCho(idPhim , NgayChieu , idKhachhang);
+            this.Hide();
+            formChonCho.ShowDialog();
+            this.Show();
+        }
+
+        private void bunifuThinButton22_Click(object sender, EventArgs e)
+        {
+            FormTrailer formTrailer = new FormTrailer(idPhim);
+            formTrailer.ShowDialog();
+            
         }
     }
 }

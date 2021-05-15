@@ -4,23 +4,26 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="1ecd9330db7d4c6d9d64eff9bbf0b191" Name="Diagram1">
+      <Diagram DiagramId="c18d17bbac974586b98fe9a734f8e99a" Name="Diagram1">
         <EntityTypeShape EntityType="QuanLyRapChieuPhimModel.CaChieu" Width="1.5" PointX="3" PointY="5.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLyRapChieuPhimModel.GheNgoi" Width="1.5" PointX="5.25" PointY="6.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLyRapChieuPhimModel.KhachHang" Width="1.5" PointX="5.25" PointY="11.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLyRapChieuPhimModel.LichChieu" Width="1.5" PointX="5.25" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyRapChieuPhimModel.GheNgoi" Width="1.5" PointX="7.5" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyRapChieuPhimModel.KhachHang" Width="1.5" PointX="7.5" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyRapChieuPhimModel.LichChieu" Width="1.5" PointX="5.25" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyRapChieuPhimModel.LoaiVe" Width="1.5" PointX="7.5" PointY="9" IsExpanded="true" />
         <EntityTypeShape EntityType="QuanLyRapChieuPhimModel.Phim" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="QuanLyRapChieuPhimModel.PhongChieu" Width="1.5" PointX="3" PointY="8.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLyRapChieuPhimModel.TaiKhoan" Width="1.5" PointX="3" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyRapChieuPhimModel.sysdiagram" Width="1.5" PointX="9.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyRapChieuPhimModel.TaiKhoan" Width="1.5" PointX="5.25" PointY="6.125" IsExpanded="true" />
         <EntityTypeShape EntityType="QuanLyRapChieuPhimModel.TheLoai" Width="1.5" PointX="0.75" PointY="1.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLyRapChieuPhimModel.Ve" Width="1.5" PointX="7.5" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyRapChieuPhimModel.Ve" Width="1.5" PointX="9.75" PointY="1.375" IsExpanded="true" />
         <AssociationConnector Association="QuanLyRapChieuPhimModel.FK__LichChieu__idCaC__239E4DCF" ManuallyRouted="false" />
-        <AssociationConnector Association="QuanLyRapChieuPhimModel.FK__Ve__idGheNgoi__2F10007B" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyRapChieuPhimModel.FK__GheNgoi__idLichC__412EB0B6" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyRapChieuPhimModel.FK__Ve__idGheNgoi__778AC167" ManuallyRouted="false" />
         <AssociationConnector Association="QuanLyRapChieuPhimModel.FK__KhachHang__DiemT__276EDEB3" ManuallyRouted="false" />
-        <AssociationConnector Association="QuanLyRapChieuPhimModel.FK__Ve__idKhachHang__2E1BDC42" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyRapChieuPhimModel.FK__Ve__idKhachHang__76969D2E" ManuallyRouted="false" />
         <AssociationConnector Association="QuanLyRapChieuPhimModel.FK__LichChieu__idPhi__24927208" ManuallyRouted="false" />
         <AssociationConnector Association="QuanLyRapChieuPhimModel.FK__LichChieu__idPho__22AA2996" ManuallyRouted="false" />
-        <AssociationConnector Association="QuanLyRapChieuPhimModel.FK__Ve__idLichChieu__2D27B809" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyRapChieuPhimModel.FK__Ve__LoaiVe__787EE5A0" ManuallyRouted="false" />
         <AssociationConnector Association="QuanLyRapChieuPhimModel.FK__Phim__idTheLoai__1CF15040" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>

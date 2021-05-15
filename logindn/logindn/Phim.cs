@@ -29,8 +29,8 @@ namespace logindn
         public string DaoDien { get; set; }
         public string DienVien { get; set; }
         public System.DateTime NgayCongChieu { get; set; }
-        public Nullable<bool> TrangThai { get; set; }
         public byte[] ApPhich { get; set; }
+        public string Trailer { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<LichChieu> LichChieux { get; set; }
